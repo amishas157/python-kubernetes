@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-kubernetes"
+version = "0.0.1"
+description = "A small package to learn deploying python package using kubernetes"
+authors = ["Amisha Singla <amishas157@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask-RESTful = "^0.3.10"
+Flask = "^2.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
