@@ -65,7 +65,7 @@ $ kubectl port-forward hello-world-deployment-78bf87cc74-jjpts 5000:5000
 ```
 $ curl 127.0.0.1:5000
 
-"Hello Python!"
+[["columnA", " columnB"], ["1", " 2"]]
 ```
 
 7. Access application inside pod
