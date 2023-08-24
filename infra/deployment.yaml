@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world-container
-        image: amishas157/hello-world:latest
+        image: amishas157/hello-world-spark:latest
         ports:
         - containerPort: 5000

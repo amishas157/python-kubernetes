@@ -25,20 +25,29 @@ $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 $ minikube start
 ```
 
-2. Deploy python application on Kube cluster
+2. Build, tag and push docker image to container registry(dockerhub in this example)
+
+```
+$ docker login
+$ docker build . -t hello-world-spark
+$ docker image tag hello-world-spark:latest amishas157/hello-world-spark:latest
+$ docker image push amishas157/hello-world-spark:latest
+```
+
+3. Deploy python application on Kube cluster
 
 ```
 $ cd infra
 $ kubectl apply -f deployment.yaml
 ```
 
-3. Deploy service on Kube cluster
+4. Deploy service on Kube cluster
 
 ```
 $ kubectl apply -f service.yaml
 ```
 
-4. Port forward the service to your localhost
+5. Port forward the service to your localhost
 
 ```
 -- Find the pod name
@@ -51,7 +60,7 @@ $ kubectl get pods
 $ kubectl port-forward hello-world-deployment-78bf87cc74-jjpts 5000:5000
 ```
 
-5. Find your application at localhost
+6. Find your application at localhost
 
 ```
 $ curl 127.0.0.1:5000
@@ -59,7 +68,7 @@ $ curl 127.0.0.1:5000
 "Hello Python!"
 ```
 
-6. Access application inside pod
+7. Access application inside pod
 
 In case you want to access application directly without needing to port forward the request, do following:
 
